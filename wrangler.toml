@@ -1,0 +1,17 @@
+name = "rsi-book"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*", "/api-docs"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rsi-book"
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+
+# API keys are a secret: npx wrangler secret put API_KEYS
+# format: rachel:rsi_xxx,leoyang:rsi_xxx,leoliu:rsi_xxx,lunar:rsi_xxx

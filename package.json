@@ -1,1 +1,11 @@
-{ "name": "rsi-book", "version": "1.0.0", "private": true, "scripts": { "start": "node server.js" }, "engines": { "node": ">=18" } }
+{
+  "name": "rsi-book",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute rsi-book --remote --file=schema.sql",
+    "db:init:local": "wrangler d1 execute rsi-book --local --file=schema.sql"
+  },
+  "devDependencies": { "wrangler": "^4.0.0" }
+}
